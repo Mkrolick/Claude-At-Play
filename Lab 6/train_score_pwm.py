@@ -23,7 +23,7 @@ def compute_pwm(sequences):
 
     for idx in range(seq_len):
         for letter in ["A", "T", "G", "C"]:
-            log_normalized[letter][idx] = math.log2(((pwm[idx][letter] / len(sequences)) + 1e-16) / 0.25)
+            log_normalized[letter][idx] = math.log2((pwm[idx][letter] / len(sequences)) / 0.25 + 1e-16)
 
     return log_normalized
 
